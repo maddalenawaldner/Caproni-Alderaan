@@ -1,0 +1,101 @@
+file_name,output,expected_output,check
+B4-0187_00140.txt,VILLA CISNEROS ... PANORAMA ... VILLA CISNEROS ... PANORAMA ... 
+B4-0187_00175.txt,58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 58 
+B4-0187_00110.txt,LO SBARCO. LO SBARCO. 
+B4-0187_00050.txt,NO_TEXT 
+B4-0187_00178.txt,NO_TEXT 
+B4-0187_00033.txt,SCUOLA DI VOGA. SCUOLA DI VOGA. 
+B4-0187_00078.txt,9312 i - DONA. i - DONA. 1927-32 
+B4-0187_00019.txt,RIFORNIMENTO. RIFORNIMENTO. 
+B4-0187_00043.txt,20 
+B4-0187_00176.txt,NO_TEXT 
+A-1315_00031.txt,Dettaglio apparecchio a equilibrio automatico 1345-22 13 
+A-1315_00049.txt,1345-33 1345-34 1345-36 1345-34 1345-35 Prove statiche Prove statiche LE 22 
+A-1315_00045.txt,Probe statische 1345-31 Probe statische 1345-31 20 
+A-1315_00039.txt,Dettaglio apparecchio a equilibrio automatico ~ 1345-28 Dettaglio apparecchio a equilibrio automatico ~ 1345-28 /17 
+A-1315_00083.txt,39 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345-67 1345-68 1345-67 1345-64 1345-65 1345-66 1345- 
+A-1315_00035.txt,15 45 1345-24 1345-25 Dettaglio apparecchio a equilibrio automatico 
+A-1315_00001.txt,NO_TEXT 
+A-1315_00013.txt,Dettaglio Pararolo Caproni con motore istativo 1345-4 4 
+A-1315_00063.txt,Apparecchio a equilibrio automatico AB15-47 29 AB15-47 
+A-1315_00043.txt,Fiori statiche 19³ Fiori statiche 1345-30 
+B4-0741_00151.txt,"LA ""BATTERIA."" "
+B4-0741_00214.txt,NO_TEXT 
+B4-0741_00173.txt,ALLA FONDA ALLA FONDA 
+B4-0741_00112.txt,SORVOLANDO IL PORTO DI CHICAGO 
+B4-0741_00129.txt,UN CORTEO UN CORTEO 
+B4-0741_00088.txt,NO_TEXT 
+B4-0741_00084.txt,VIVA L'ITALIA! VIVA BALBO! VIVA LA CROCIERA ATLANTICA! DAVANTI ALL'HOTEL BORG - IL PRIMO MINISTRO LANCIA ALLA FOLLA UN HURRA PER L'ITALIA 
+B4-0741_00087.txt,IN VOLO SULL'OCEANO IN VOLO SULL'OCEANO 
+B4-0741_00124.txt,RIFORNIMENTI RIFORNIMENTI 
+B4-0741_00137.txt,NO_TEXT 
+B4-0186_00219.txt,M.036 SERGENTE MOTORISTA FELICE NENSI CADUTO A BOLAMA IL 6 GENNAIO 1931-IX. 
+B4-0186_00016.txt,M 921 LO SBARCO A NATAL. 
+B4-0186_00056.txt,6hl M 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 6hl 
+B4-0186_00122.txt,S. PAULO - FESTE E . . . FESTE. 
+B4-0186_00200.txt,GL.840 GL.840 26 
+B4-0186_00083.txt,M. 809. M. 809. 
+B4-0186_00078.txt,m. 1914.  ALL'AEROPORTO DI DOS AFFONSOs. 
+B4-0186_00192.txt,LA FOLLA DAVANTI ALL'ALBERGO. 
+B4-0186_00010.txt,G38 VERSO L'ORMEGGIO. G38 VERSO L'ORMEGGIO. 
+B4-0186_00191.txt,ARRIVO A TORINO. ARRIVO A TORINO. 
+B4-0709E_00060.txt,BRÉDA 88 BRÉDA 88 F43E-77 
+B4-0709E_00032.txt,"7082-36 6,45 7082-36 "
+B4-0709E_00052.txt,N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7003 N7 
+B4-0709E_00011.txt,Ca. 100 5028E-10 
+B4-0709E_00043.txt,24 303E-83 
+B4-0709E_00036.txt,709E-42 709E-63 
+B4-0709E_00047.txt,Costruzione U.S.A. 1933 
+B4-0709E_00017.txt,Ro. 3 4095-76 Ro. 3 4095-76 
+B4-0709E_00027.txt,Monospar Monospar #095-23 13 
+B4-0709E_00014.txt,Cont. 36 
+A-1312_00081.txt,L'apparecchio incendiato di Slavotsoff - Moizzafiori 19 Aprile 1913  1342-49  I resti dell'apparecchio di R. Tabbii  1342-50  37 
+A-1312_00095.txt,NO_TEXT 
+A-1312_00019.txt,Interno Officine di Vizzola 7 A312 - + 
+A-1312_00075.txt,Caduta di Roberto Tabbi - 11. luglio 1915 Caduta di Roberto Tabbi - 11. luglio 1915 AB.A2-43 AB.A2-44 34 
+A-1312_00013.txt,Interno Officine di Niccola 1342-4 
+A-1312_00021.txt,Antonino Officine di Niccola 13.12-8 8 
+A-1312_00097.txt,"KODAK Color Control Patches © The Tiffen Company, 2000 Kodak LICENSED PRODUCT 1342-A "
+A-1312_00093.txt,NO_TEXT 
+A-1312_00047.txt,21 Interno Officine di Vizzola 1342-21 Interno Officine di Vizzola 
+A-1312_00087.txt,40 Dettagli Parassol 13.12-56 13.12-54 13.12-56 13.12-58 13.12-59 Dettagli Parassol 
+A-1835_00085.txt,Prima Milano Roma: Slavorosoff a Santa Marinella 1835-64 39 
+A-1835_00053.txt,22 1835-34 1835-35 Visita di S.E. Fatta al campo di Viziola 12-9-1912 
+A-1835_00075.txt,Owiakice Rosina Teccatio 33 
+A-1835_00049.txt,S.C. Festa e altri ospiti (fra cui i Magg. Trasfinetti e Cattaneo) assistono ai voli di Gordesco e Rahma di Cernola a Vizzola 12-9-1912 
+A-1835_00087.txt,Prima Odisiaw Roma: Slavocsoff a Santa Odatinella 38 1835-65 
+A-1835_00077.txt,34 1835-58 1836-59 G. Borgotti parte per il record d'altezza 24-1-1913 ~ Ten. A. Pallotti su Caproni 
+A-1835_00015.txt,~ Monoplano 1912 ~ 1825-8 ~ Monoplano 1912 ~ 1825-8 
+A-1835_00021.txt,~ Моноплано 1912 in volo ~ 1835-41 ~ Моноплано 1912 in volo ~ 1835-41 6 
+A-1835_00017.txt,~ Monoplano 1912 in volo ~ 1835-9 ~ Monoplano 1912 in volo ~ 1835-9 9 
+A-1835_00031.txt,Gen. Antonio Pallotti 1835-19 Gen. Antonio Pallotti 1835-19 
+B4-0188_00146.txt,V8-122 
+B4-0188_00173.txt,LUNGO LE COSTE DI TERRANOWA 432-262 
+B4-0188_00044.txt,L'ALICE FRA I GHIACCI DELLA GRIGNET BAY 
+B4-0188_00191.txt,9 AGOSTO - LISBONA L'ARRIVO 186-186 
+B4-0188_00040.txt,MASCHIOLI - CALÒ - PALMIOTTI - PINELLI 
+B4-0188_00074.txt,SORVOLANDO LA RENANIA. 
+B4-0188_00106.txt,SIATE IBEN VENUTI THE SHEDIAC SIATE IBEN VENUTI IL RICEVIMENTO DA PARTE DELLE AUTORITA 1935-1932 
+B4-0188_00199.txt,AEREA LA TRIBUNA DELLE FAMIGLIE DEGLI ATLANTICI 1882-1932 
+B4-0188_00147.txt,E. BALBO AY. S. WABASH AVE. GENERAL BALBO AVENUE GENERAL BALBO AVENUE 
+B4-0188_00126.txt,NO_TEXT 
+B4-0709A_00016.txt,NO_TEXT 
+B4-0709A_00012.txt,NO_TEXT 
+B4-0709A_00008.txt,NO_TEXT 
+B4-0709A_00024.txt,NO_TEXT 
+B4-0709A_00042.txt,NO_TEXT 
+B4-0709A_00003.txt,D-1929 DOX DOX D-1929 Flugschiff Do X 908A-1 
+B4-0709A_00025.txt,kampfflingzeng Dornier Do 22 D-6AND kampfflingzeng Dornier Do 22 709A-12 
+B4-0709A_00027.txt,Seeflugzeug Dornier Do 22 703A-43 
+B4-0709A_00044.txt,ENZA GOZZAR DIROCCO 
+B4-0709A_00046.txt,BIBLIOTECA CAPPRON ALB F 17 MILANO 
+A-1314_00071.txt,"""Milano. Donato alla Flotta Aerea dalla S.I.A. Costruito dall' Ing. Caproni & C. 1314 - 81  Apparecchio ""Milano, donato alla Flotta Aerea dalla S.I.A. "
+A-1314_00091.txt,40 Il Sen. Di Maio e l'Ing. Caproni a bordo del Nibilano ~ Vitaletti - Bunn. Rofsi e famiglia 1314-100 1314-101 Lynarch 
+A-1314_00117.txt,NO_TEXT 
+A-1314_00001.txt,NO_TEXT 
+A-1314_00083.txt,"Consegna apparecchio regalato dalla ""S.I.A. all'esercito 134u-93 134u-94 134u-95 134u-96 36 "
+A-1314_00061.txt,25 1344-30 Macchina per volare Col. Monteremolo 1344-30 Macchina per volare Col. Monteremolo 
+A-1314_00085.txt,Consegna dell'apparato Milano. 1344 97 37 
+A-1314_00063.txt,Comandante De Filippi - Cap. Moreno - Luigi Origoni - Smitti - Ing. Caproni Prime visite a Vizzola Comandante De Filippi - Cap. Moreno - Luigi Origoni - Smitti - Ing. Caproni 13.14-11 13.14-12 13.14-13 26 
+A-1314_00057.txt,15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 15 Maggio 1912 - Ten. Aldo Berloletti Ficarh 1 
+A-1314_00003.txt,= A L B U M N.° 3 = 1 = Gruppi di operai delle officine Caproni presi dall'alto. 2 = Operai di Vizzola Ticino = Primavera 1912 3 = Primo monoplano biposto 1912 4 = Monoplano biposto 35 HP = Dettagli 5 = Colucci 6 = Sott.Ten. Guido Garino = Menegardo 7 = Pilota Ruggero Franzoni 8 = Ten. Costantino Quaglia = Ten. Gordesco 9 = Pilota Emilio Facchini 10 = Visita Ufficiale Giapponese M. Matschoui = 20 marzo 1912 11 = Partenza di Cobioni per la traversata del Lago Maggiore = 5 aprile 1912 12 = Raid di Cobioni Vizzola = Locarno = 5 aprile 1912 In volo = A Locarno 13 = Monoplano Caproni che compì il raid Milano=Adria = 16 aprile 1912 14 = Venezia = aprile 1912 15 = Venezia = aprile 1912 16 = L'Ing. Caproni e Cobioni a Venezia = L'apparecchio al Lido 17 = L'Ing. Caproni e Cobioni = aprile 1912 18 = Venezia aprile 1912 = Ing. Caproni e Cobioni al Lido 19 = L'apparecchio al Lido di Venezia = aprile 1912 20 = Primi monoplani Il monoplano Caproni con Cobioni al Lido di Venezia 21 = Al Lido con una Signora a bordo = aprile 1912 
