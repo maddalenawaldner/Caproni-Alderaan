@@ -102,19 +102,60 @@ def save_predictions(image_name, masks, boxes, scores, tags, output_dir):
     for i, (box, mask, score, tag) in enumerate(zip(boxes, masks, scores, tags)):
         mask_np = mask.squeeze(0).cpu().numpy().astype(np.uint8) * 255
         mask_img = Image.fromarray(mask_np)
-        mask_img.save(masks_dir / f"{image_name}_mask_{i}.png")
+        mask_filename = f"{image_name}_mask_{i}_{tag}.png"
+        mask_img.save(masks_dir / mask_filename)
     
         x1, y1, x2, y2 = box.cpu().numpy().tolist()
         boxes_data.append({
             "id": i,
             "box": [x1, y1, x2, y2],
             "score": float(score),
-            "tag": tag
+            "tag": tag,
+            "mask_filename": mask_filename
         })
     
     with open(boxes_dir / f"{image_name}_boxes.json", "w") as f:
         json.dump(boxes_data, f, indent=4)
     print(f"Predizioni salvate nella cartella dedicata: {image_output_dir}")
+
+
+
+
+def aggregate_masks_by_tag(masks, tags):
+    """
+    Raggruppa le maschere per tag e le unisce con un'operazione OR logica:
+    un pixel appartiene all'oggetto aggregato se appartiene ad almeno una
+    delle istanze con quel tag (es. tutte le "person" diventano una sola maschera).
+    Restituisce un dizionario {tag: maschera_aggregata (tensor booleano)}.
+    """
+    aggregated = {}
+    for mask, tag in zip(masks, tags):
+        mask_bool = mask.squeeze(0).bool()
+        if tag not in aggregated:
+            aggregated[tag] = mask_bool.clone()
+        else:
+            aggregated[tag] = aggregated[tag] | mask_bool
+    return aggregated
+
+
+def save_aggregated_masks(image_name, aggregated_masks, output_dir):
+    """
+    Salva una sola maschera per tag (unione di tutte le istanze con quel tag),
+    in una sottocartella separata da quella delle maschere per-istanza.
+    Nome file: {image_name}_{tag}.png — compatibile con load_masks_for_image
+    del Gradio app, che estrae il tag direttamente dal nome del file.
+    """
+    agg_dir = Path(output_dir) / image_name / "masks_aggregated"
+    agg_dir.mkdir(exist_ok=True, parents=True)
+
+    for tag, mask in aggregated_masks.items():
+        mask_np = mask.cpu().numpy().astype(np.uint8) * 255
+        mask_img = Image.fromarray(mask_np)
+        safe_tag = tag.replace("/", "_").replace("\\", "_")  # evita caratteri non validi nel path
+        mask_img.save(agg_dir / f"{image_name}_{safe_tag}.png")
+    print(f"Maschere aggregate per tag salvate in: {agg_dir}")
+
+
 
 
 def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
@@ -146,7 +187,8 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
         score = item["score"]
         tag_label = item.get("tag", "N/A")
 
-        mask_path = data_dir / "masks" / f"{image_name}_mask_{i}.png"
+        mask_filename = item.get("mask_filename", f"{image_name}_mask_{i}.png")
+        mask_path = data_dir / "masks" / mask_filename
         if not mask_path.exists():
             continue
         
@@ -215,12 +257,12 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
 #         print("La lista dei file di test è vuota")
 #         exit()
         
-#     test_image_path = lista_test[6] # seleziona solo un'immagine per la verifica
+#     test_image_path = lista_test[8] # seleziona solo un'immagine per la verifica
 #     print(f"Avvio test su singola immagine: {test_image_path}")
     
 #     # cartelle di output
-#     base_output_dir = "/home/mwaldner/workspace/outputs/prove_sam3/predizioni"
-#     verification_dir = "/home/mwaldner/workspace/outputs/prove_sam3/verifica_immagini"
+#     base_output_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/predizioni"
+#     verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/verifica_immagini"
 
 #     # estrazione con SAM3 + NMS
 #     img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
@@ -243,21 +285,65 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
 
 
 
-# SCRIPT PER ESEGUIRE TUTTE LE IMMAGINI ALL'INTERNO DELLA LISTA DELLE 100 IMMAGINI DI PROVA
+# # SCRIPT PER ESEGUIRE TUTTE LE IMMAGINI ALL'INTERNO DELLA LISTA DELLE 100 IMMAGINI DI PROVA
+# if __name__ == "__main__":
+    
+#     lista_test = path_testfile()
+#     if not lista_test:
+#         print("La lista dei file di test è vuota")
+#         exit()
+
+#     for path in lista_test:
+
+#         test_image_path = path
+    
+#         # cartelle di output
+#         base_output_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/predizioni"
+#         verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/verifica_immagini"
+
+#         # estrazione con SAM3 + NMS
+#         img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
+        
+#         # se non ci sono tag per un'immagine il ciclo continua
+#         if boxes.numel() == 0:
+#             print(f"Nessun tag trovato per {img_name}")
+#             continue
+
+#         # salvataggio: crea in automatico base_output_dir/img_name/masks e base_output_dir/img_name/boxes
+#         save_predictions(img_name, masks, boxes, scores, tags, base_output_dir)
+#         aggregated = aggregate_masks_by_tag(masks, tags)
+#         save_aggregated_masks(img_name, aggregated, base_output_dir)
+#         print("Fase di salvataggio completata con successo")
+        
+#         # genera l'immagine di verifica leggendo dalla nuova struttura
+#         image_with_boxes_masks(
+#             image_path=test_image_path,
+#             boxes_masks_dir=base_output_dir,
+#             output_dir=verification_dir
+#         )
+
+#     print("Test completato")
+
+
+# SCRIPT PER ESEGUIRE TUTTE LE IMMAGINI
 if __name__ == "__main__":
     
-    lista_test = path_testfile()
-    if not lista_test:
+    path_album_img = Path("/data/caproni/maddalena_waldner/workspace/data/Album Trento JPG_split")
+    lista_path_img = []
+    for album in path_album_img.iterdir():
+        for img in album.iterdir():
+            lista_path_img.append(img)
+    if not lista_path_img:
         print("La lista dei file di test è vuota")
         exit()
 
-    for path in lista_test:
+    for path in lista_path_img:
 
         test_image_path = path
     
         # cartelle di output
-        base_output_dir = "/home/mwaldner/workspace/outputs/prove_sam3/predizioni"
-        verification_dir = "/home/mwaldner/workspace/outputs/prove_sam3/verifica_immagini"
+        base_output_dir = "/data/caproni/maddalena_waldner/workspace/outputs/outputs_sam3_tutti/predizioni"
+        verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/outputs_sam3_tutti/verifica_immagini"
 
         # estrazione con SAM3 + NMS
         img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
@@ -269,6 +355,8 @@ if __name__ == "__main__":
 
         # salvataggio: crea in automatico base_output_dir/img_name/masks e base_output_dir/img_name/boxes
         save_predictions(img_name, masks, boxes, scores, tags, base_output_dir)
+        aggregated = aggregate_masks_by_tag(masks, tags)
+        save_aggregated_masks(img_name, aggregated, base_output_dir)
         print("Fase di salvataggio completata con successo")
         
         # genera l'immagine di verifica leggendo dalla nuova struttura

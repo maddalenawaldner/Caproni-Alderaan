@@ -3,7 +3,7 @@ from pathlib import Path
 
 def get_tag_frequencies():
     
-    outputs_ram = Path("/home/mwaldner/workspace/outputs/outputs_ram")
+    outputs_ram = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram")
     dict_tag_frequencies = {}
 
     for album in outputs_ram.iterdir():
@@ -30,8 +30,8 @@ def get_tag_frequencies():
 
 def filter_tag():
 
-    outputs_ram = Path("/home/mwaldner/workspace/outputs/outputs_ram")
-    outputs_ram_clean = Path("/home/mwaldner/workspace/outputs/outputs_ram_clean")
+    outputs_ram = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram")
+    outputs_ram_clean = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_clean")
 
     for album in outputs_ram.iterdir():
         
@@ -48,7 +48,7 @@ def filter_tag():
                 
                 for tag in lista_tag:
                     tag_pulito = tag.strip()
-                    if tag_pulito not in ["photo", "white", "black", "picture", "image", "blanket", "album", "book", "hardback book", "notebook", "shadow"]:
+                    if tag_pulito not in ["photo", "image", "picture", "album", "blanket", "postcard", "family photo", "group photo", "wedding photo", "book", "hardback book", "notebook", "journal", "document", "paper", "text", "writing", "letter", "signature", "note", "notepad", "white", "black", "brown", "blue", "green", "red", "color", "fly", "wear", "walk", "pose", "float", "sit", "attach", "shake", "travel", "wave", "march", "salute", "catch", "ride", "write", "draw", "load", "talk", "sew", "sing", "ski", "stare", "drive", "spin", "laugh", "smile", "harvest", "lift", "drag", "push", "wash", "swim", "lean", "out", "repair", "fiction", "art", "design", "stand"]:
                         lista_tag_pulita.append(tag_pulito)
                     else:
                         continue
@@ -59,7 +59,8 @@ def filter_tag():
                     outFile.write(", ".join(lista_tag_pulita))
                 
 
-
-dict_tag_frequencies = get_tag_frequencies()
-print(dict_tag_frequencies)
+if __name__ == "__main__":
+    dict_tag_frequencies = get_tag_frequencies()
+    print(dict_tag_frequencies)
+    print(filter_tag())
 

@@ -248,8 +248,8 @@ if __name__ == "__main__":
         test_image_path = path
     
         # cartelle di output
-        base_output_dir = "/home/mwaldner/workspace/outputs/prove_sam3_sinonimi/predizioni"
-        verification_dir = "/home/mwaldner/workspace/outputs/prove_sam3_sinonimi/verifica_immagini"
+        base_output_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/predizioni"
+        verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/verifica_immagini"
 
         # estrazione con SAM3 + NMS
         img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
