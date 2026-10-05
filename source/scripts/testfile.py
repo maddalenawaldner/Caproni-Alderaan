@@ -50,6 +50,27 @@ def return_tag_from_image(path):
     return(lista_tag_pulita)
 
 
+def return_nouns_from_image(path):
+
+    outputs_ram_clean = Path(r"/data/caproni/maddalena_waldner/workspace/outputs/sostantivi_qwen_txt_tradotti")
+
+    image_name = path.name.removesuffix(".jpg")
+
+    for cartella in outputs_ram_clean.iterdir():
+        for elemento in cartella.iterdir():
+            elemento_name = elemento.name.removesuffix(".txt")
+            if image_name == elemento_name:
+                with open(elemento, "r") as f:
+                    stringa_tags = f.read()
+                    lista_tag = stringa_tags.split(",")
+                    lista_tag_pulita = []
+                    for tag in lista_tag:
+                        tag_pulito = tag.strip()
+                        lista_tag_pulita.append(tag_pulito)
+                        
+    return(lista_tag_pulita)
+
+
 if __name__ == "__main__":
     path = Path("/data/caproni/maddalena_waldner/workspace/data/Album Trento JPG_split/A-1312_split/A-1312_00065.jpg")
     tag = return_tag_from_image(path)

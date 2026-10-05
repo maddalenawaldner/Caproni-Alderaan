@@ -15,7 +15,7 @@ sampling = SamplingParams(temperature=0.0, max_tokens=1024)
 ISTRUZIONI = (
     "Estrai tutti i sostantivi dal testo fornito includendo solo nomi concreti ed escludendo nomi propri."
     "Riportali in minuscolo, senza articoli e senza ripetizioni. "
-    "Rispondi SOLO con una lista JSON di stringhe, ad esempio: [\"casa\", \"aereo\"]. "
+    "Rispondi SOLO con una lista di stringhe, ad esempio: [\"casa\", \"aereo\"]. "
     "Se non ci sono sostantivi rispondi []."
 )
 
@@ -40,7 +40,7 @@ def parse_output(risposta: str) -> list:
 if __name__ == "__main__":
 
     path_album_testi = Path("/data/caproni/maddalena_waldner/workspace/outputs/Album Trento JPG_split")
-    path_output      = Path("/data/caproni/maddalena_waldner/workspace/outputs/sostantivi_qwen")
+    path_output      = Path("/data/caproni/maddalena_waldner/workspace/outputs/sostantivi_qwen_txt")
 
     # raccoglie tutti i testi e i relativi path
     testi = []
@@ -69,22 +69,14 @@ if __name__ == "__main__":
         chat_template_kwargs={"enable_thinking": False},   # disattiva il "ragionamento" di Qwen3
     )
 
-    # salva un file JSON per immagine, mantenendo la struttura a cartelle degli album
-    for txt_path, testo, out in zip(paths, testi, outputs):
-        risposta = out.outputs[0].text
-        sostantivi = parse_output(risposta)
+    # salva un file TXT per immagine, mantenendo la struttura a cartelle degli album
+    for txt_path, out in zip(paths, outputs):
+        sostantivi = parse_output(out.outputs[0].text)
 
         out_dir = path_output / txt_path.parent.name
         out_dir.mkdir(parents=True, exist_ok=True)
-        with open(out_dir / f"{txt_path.stem}.json", "w", encoding="utf-8") as f:
-            json.dump(
-                {
-                    "nome_file": txt_path.stem,
-                    "testo": testo,
-                    "sostantivi": sostantivi,
-                    "risposta_grezza": risposta,           # utile per controllare i casi in cui il parsing fallisce
-                },
-                f, ensure_ascii=False, indent=4,
-            )
+        (out_dir / f"{txt_path.stem}.txt").write_text(
+            ", ".join(sostantivi), encoding="utf-8"
+        )
 
     print(f"Risultati salvati in: {path_output}")

@@ -11,6 +11,7 @@ import numpy as np
 # Definizione dei path
 path_album        = Path("/data/caproni/maddalena_waldner/workspace/data/Album Trento JPG_split")
 path_tag_dir      = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_clean")
+path_tag  = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_clean")
 path_testo_dir    = Path("/data/caproni/maddalena_waldner/workspace/outputs/Album Trento JPG_split")
 path_maschere_dir     = Path("/data/caproni/maddalena_waldner/workspace/data/Album Trento JPG_split")
 path_maschere_singole = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_sam3_tutti/predizioni")
@@ -95,7 +96,21 @@ def find_pred_dir(name_img: str) -> Path | None:
     return None
 
 
-# Restituisce {tag: Path} leggendo le maschere aggregate (una per tag) da predizioni/<img>/masks_aggregated/
+def load_tag_en_to_ita(name_img: str) -> dict:
+    """Restituisce {tag_inglese: tag_italiano} per un'immagine."""
+    en_tags, ita_tags = [], []
+    for album in path_tag_dir.iterdir():
+        for f in album.iterdir():
+            if f.stem == name_img:
+                en_tags = [t.strip() for t in f.read_text(encoding="utf-8").split(",") if t.strip()]
+    for album in path_tag.iterdir():
+        for f in album.iterdir():
+            if f.stem == name_img:
+                ita_tags = [t.strip() for t in f.read_text(encoding="utf-8").split(",") if t.strip()]
+    return dict(zip(en_tags, ita_tags))
+
+
+# Restituisce {tag_italiano: Path} leggendo le maschere aggregate (una per tag) da predizioni/<img>/masks_aggregated/
 def load_masks_for_image(name_img: str) -> dict:
     masks = {}
     pred_dir = find_pred_dir(name_img)
@@ -104,15 +119,17 @@ def load_masks_for_image(name_img: str) -> dict:
     agg_dir = pred_dir / "masks_aggregated"
     if not agg_dir.is_dir():
         return masks
+    en_to_ita = load_tag_en_to_ita(name_img)
     prefix = pred_dir.name + "_"
     for mask_file in sorted(agg_dir.iterdir()):
         if mask_file.suffix.lower() != ".png":
             continue
-        tag = mask_file.stem
-        if tag.startswith(prefix):
-            tag = tag[len(prefix):]                           # rimuove "nome_img_" e tiene solo il tag
-        if tag:
-            masks[tag] = mask_file
+        en_tag = mask_file.stem
+        if en_tag.startswith(prefix):
+            en_tag = en_tag[len(prefix):]                     # rimuove "nome_img_" e tiene solo il tag inglese
+        if en_tag:
+            ita_tag = en_to_ita.get(en_tag, en_tag)          # fallback all'inglese se manca la traduzione
+            masks[ita_tag] = mask_file
     return masks
 
 # Cache numpy overlay arrays: {name_img → {tag → RGBA np.ndarray}}
@@ -122,9 +139,9 @@ _b64_cache: dict = {}                                                  # contien
                                                                        # N.B. Entrambi i dizionari contengono la stessa informazione (nel primo le maschere sono sottoforma di matrice NumPy Array; nel secondo sottoforma di stringa)
 
 
-
-# Restituisce la lista dei tag per cui SAM3 ha prodotto una maschera aggregata ([] se l'immagine non è stata elaborata)
+# Restituisce la lista dei tag italiani per cui SAM3 ha prodotto una maschera aggregata ([] se l'immagine non è stata elaborata)
 def filtra_tag(name_img):
+    en_to_ita = load_tag_en_to_ita(name_img)
     lista_tag_sopravvissuti = []
     for album in path_maschere_singole.iterdir():
         if album.name == name_img:
@@ -132,8 +149,8 @@ def filtra_tag(name_img):
                 if cartella.name == "masks_aggregated":
                     for file in sorted(cartella.iterdir()):
                         if file.suffix.lower() == ".png":
-                            tag = file.stem[len(name_img) + 1:]   # toglie "nome_img_" e tiene il tag
-                            lista_tag_sopravvissuti.append(tag)
+                            en_tag = file.stem[len(name_img) + 1:]    # toglie "nome_img_" e tiene il tag inglese
+                            lista_tag_sopravvissuti.append(en_to_ita.get(en_tag, en_tag))
     return lista_tag_sopravvissuti
 
 
@@ -362,6 +379,9 @@ def load_image_data(img_path: str) -> tuple:
         for file in album.iterdir():
             if file.stem == name_img:
                 txt = file.read_text(encoding="utf-8")
+    has_text = txt.strip() != "NO_TEXT"
+    if not has_text:
+        txt = ""
     for album in path_tag_dir.iterdir():
         for file in album.iterdir():
             if file.stem == name_img:
@@ -372,14 +392,14 @@ def load_image_data(img_path: str) -> tuple:
                     if t:
                         tags.append(t)                           # assegna a txt e tags il testo e i tag originali estratti dal modello
     tag_sopravvissuti = filtra_tag(name_img)
-    if tag_sopravvissuti:
-        tags = tag_sopravvissuti
+    has_masks = bool(tag_sopravvissuti)
+    tags = tag_sopravvissuti if tag_sopravvissuti else []         # se non ci sono maschere, nessun tag viene mostrato
     saved = load_current_revision(name_img)                      # assegna a saved il dizionario con i valori della versione corrente (None se non esiste il file jsonl)
     if saved:
         txt  = saved.get("ocr", txt)
         tags = saved.get("tag", tags)
     mask = find_mask_path(name_img)
-    return (str(mask) if mask else None), name_img, txt, tags    # ritorna il path delle maschere, il nome dell'immagine, il testo e i tag
+    return (str(mask) if mask else None), name_img, txt, tags, has_masks, has_text
 
 
 
@@ -711,6 +731,11 @@ button.secondary:hover {
     font-size: 0.95rem !important;
 }
 
+/* Nasconde il pulsante "svuota tutto" (×) e la freccia dropdown (▼) nella sezione tag */
+#dd_tags button { display: none !important; }
+/* Ripristina i pulsanti × individuali dentro ogni token */
+#dd_tags .token button { display: inline-flex !important; }
+
 /* Definisce i messaggi di stato */
 #ocr_block .prose p,
 #tags_block .prose p {
@@ -833,7 +858,7 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
                         btn_dialog_annulla = gr.Button("✏️ Continua a modificare")
 
                 # Nome file corrente
-                txt_nome = gr.Textbox(label="", show_label=False, interactive=False, elem_id="nome_file", container=False)
+                txt_nome = gr.Textbox(value="Seleziona un'immagine dall'elenco di sinistra", label="", show_label=False, interactive=False, elem_id="nome_file", container=False)
 
                 gr.HTML('<div style="height: 12px;"></div>')
 
@@ -851,10 +876,10 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
                             container=False,
                         )
                         with gr.Group(elem_id="ocr_block"):
-                            gr.HTML('<p style="font-family:\'Inter\',sans-serif;color:#64748b;font-size:0.82rem;font-weight:700;margin:0 0 12px;letter-spacing:0.10em;text-transform:uppercase;">Testo OCR</p>')
+                            gr.HTML('<p style="font-family:\'Inter\',sans-serif;color:#64748b;font-size:0.82rem;font-weight:700;margin:0 0 12px;letter-spacing:0.10em;text-transform:uppercase;">Testo OCR <span style="font-size:0.78rem;font-weight:400;letter-spacing:0;text-transform:none;color:#94a3b8;">— Aggiungi e/o modifica il testo</span></p>')
                             txt_ocr = gr.Textbox(
                                 label="", show_label=False, lines=4, interactive=True,
-                                placeholder="Il testo OCR apparirà qui dopo l'analisi.",
+                                placeholder="",
                             )
                             with gr.Row():
                                 btn_salva_ocr   = gr.Button("💾 Salva testo", variant="primary", scale=1)
@@ -864,14 +889,14 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
                     with gr.TabItem("🏷️  Tag e maschere", id=1):
                         mask_viewer = gr.HTML("", elem_id="mask_viewer")
                         with gr.Group(elem_id="tags_block"):
-                            gr.HTML('<p style="font-family:\'Inter\',sans-serif;color:#64748b;font-size:0.82rem;font-weight:700;margin:0 0 12px;letter-spacing:0.10em;text-transform:uppercase;">Tag</p>')
+                            gr.HTML('<p style="font-family:\'Inter\',sans-serif;color:#64748b;font-size:0.82rem;font-weight:700;margin:0 0 12px;letter-spacing:0.10em;text-transform:uppercase;">Tag <span style="font-size:0.78rem;font-weight:400;letter-spacing:0;text-transform:none;color:#94a3b8;">— Digita un tag e premi Invio per aggiungerlo; clicca × per rimuoverlo.</span></p>')
                             dd_tags = gr.Dropdown(
                                 choices=[], value=[],
                                 multiselect=True,
                                 allow_custom_value=True,
                                 label="", show_label=False,
-                                info="Digita un tag e premi Invio per aggiungerlo; clicca × per rimuoverlo.",
                                 interactive=True,
+                                elem_id="dd_tags",
                             )
                             with gr.Row():
                                 btn_salva_tags   = gr.Button("💾 Salva tag e procedi →", variant="primary", scale=1)
@@ -903,15 +928,20 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
             gr.update(visible=False, value=""),
         )
 
-    btn_login.click(
+    _login_kwargs = dict(
         fn=do_login,
         inputs=[inp_nome, inp_ruolo],
         outputs=[grp_login, grp_app, state_user, msg_login_err],
-    ).then(
+    )
+    _then_kwargs = dict(
         fn=lambda u: f"👤 **{u}**",
         inputs=[state_user],
         outputs=[lbl_utente],
     )
+
+    btn_login.click(**_login_kwargs).then(**_then_kwargs)
+    inp_nome.submit(**_login_kwargs).then(**_then_kwargs)
+    inp_ruolo.submit(**_login_kwargs).then(**_then_kwargs)
 
     # Per ogni radio: carica l'immagine, ma se ci sono modifiche non salvate mostra il dialog
     _RADIO_OUTPUTS = (
@@ -961,15 +991,17 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
                     )
 
                 # Nessuna modifica — naviga normalmente
-                _mask_orig, nome, txt, tags = load_image_data(path)
+                _mask_orig, nome, txt, tags, has_masks, has_text = load_image_data(path)
                 annulla_txt, annulla_tags = load_annulla_target(Path(path).stem)
                 overlays_b64 = get_overlay_b64(Path(path).stem, path)
                 html = make_mask_viewer_html(path, overlays_b64)
                 album = find_album_for_image(path)
+                ocr_msg  = "" if has_text  else "⚠️ Non è stato identificato alcun testo"
+                tags_msg = "" if has_masks else "⚠️ Non sono stati identificati alcun tag o maschere"
                 base = [
                     path, html, nome,
                     gr.update(choices=tags, value=tags),
-                    txt, path, annulla_txt, annulla_tags, "", "",
+                    txt, path, annulla_txt, annulla_tags, ocr_msg, tags_msg,
                     gr.update(selected=0),
                 ]
                 radio_upds = [
@@ -1012,12 +1044,14 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
 
     def _load_and_navigate(next_path, new_rev):
         """Carica next_path e costruisce il blocco di aggiornamenti comuni."""
-        _mask_orig, nome, next_txt, next_tags = load_image_data(next_path)
+        _mask_orig, nome, next_txt, next_tags, has_masks, has_text = load_image_data(next_path)
         annulla_txt, annulla_tags = load_annulla_target(Path(next_path).stem)
         next_name = Path(next_path).stem
         overlays_b64 = get_overlay_b64(next_name, next_path)
         html = make_mask_viewer_html(next_path, overlays_b64)
         next_album = find_album_for_image(next_path)
+        ocr_msg  = "" if has_text  else "⚠️ Non è stato identificato alcun testo"
+        tags_msg = "" if has_masks else "⚠️ Non è stata identificata nessun tag e maschera"
         radio_upds = []
         for aname in album_names_sorted:
             choices = build_radio_choices(new_rev, aname)
@@ -1028,7 +1062,7 @@ with gr.Blocks(title="Revisione immagini", css=custom_css, **_theme_kwarg) as de
             next_path, html, nome, next_txt,
             gr.update(choices=next_tags, value=next_tags),
             next_path, annulla_txt, annulla_tags,
-            "", "", new_rev, gr.update(selected=0),
+            ocr_msg, tags_msg, new_rev, gr.update(selected=0),
             next_txt, next_tags,
         ), tuple(radio_upds), tuple(acc_upds)
 
