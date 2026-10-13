@@ -23,10 +23,10 @@ processor = Sam3Processor(model, confidence_threshold = 0.5) # questo secondo ar
 
 
 # la funzione prende in input il path di un'immagine e restituisce le corrispondenti box, maschere e livelli di confidenza
-def extract_boxes_masks(path):
+def extract_boxes_masks(path, tags):
     path = Path(path) 
     image = Image.open(path)
-    tags = return_tag_from_image(path)
+    tags = tags
     image_name = path.stem
     width, height = image.size
 
@@ -253,6 +253,7 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
 # if __name__ == "__main__":
     
 #     lista_test = path_testfile()
+#     tags = return_tag_from_image(path)  
 #     if not lista_test:
 #         print("La lista dei file di test è vuota")
 #         exit()
@@ -265,7 +266,7 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
 #     verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/verifica_immagini"
 
 #     # estrazione con SAM3 + NMS
-#     img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
+#     img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path, tags)
     
 #     if boxes.shape[0] > 0:
 #         # salvataggio: crea in automatico base_output_dir/img_name/masks e base_output_dir/img_name/boxes
@@ -289,6 +290,7 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
 # if __name__ == "__main__":
     
 #     lista_test = path_testfile()
+#     tags = return_tag_from_image(path)
 #     if not lista_test:
 #         print("La lista dei file di test è vuota")
 #         exit()
@@ -302,7 +304,7 @@ def image_with_boxes_masks(image_path, boxes_masks_dir, output_dir):
 #         verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/prova_sam3_2409/verifica_immagini"
 
 #         # estrazione con SAM3 + NMS
-#         img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
+#         img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path, tags)
         
 #         # se non ci sono tag per un'immagine il ciclo continua
 #         if boxes.numel() == 0:
@@ -340,13 +342,14 @@ if __name__ == "__main__":
     for path in lista_path_img:
 
         test_image_path = path
+        tags = return_tag_from_image(path)
     
         # cartelle di output
         base_output_dir = "/data/caproni/maddalena_waldner/workspace/outputs/outputs_sam3_tutti/predizioni"
         verification_dir = "/data/caproni/maddalena_waldner/workspace/outputs/outputs_sam3_tutti/verifica_immagini"
 
         # estrazione con SAM3 + NMS
-        img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path)
+        img_name, masks, boxes, scores, tags = extract_boxes_masks(test_image_path, tags)
         
         # se non ci sono tag per un'immagine il ciclo continua
         if boxes.numel() == 0:
