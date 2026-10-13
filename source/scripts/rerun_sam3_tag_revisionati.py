@@ -4,7 +4,7 @@ from vllm import LLM, SamplingParams
 
 path_dict_ita_eng = Path("/data/caproni/maddalena_waldner/workspace/outputs/tag_en_ita.json")
 path_jsonl_tag_revisionati = Path("/data/caproni/maddalena_waldner/workspace/outputs/gradio/revisioni")
-path_tag_revisionati = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_rerun_sam3")
+path_tag_revisionati = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_clean")
 
 
 # 1. Istruzioni per il modello

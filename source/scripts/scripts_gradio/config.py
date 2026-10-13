@@ -4,6 +4,7 @@ import json
 # Definizione dei path
 path_album            = Path("/data/caproni/maddalena_waldner/workspace/data/Album Trento JPG_split")
 path_tag_dir          = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_clean")
+path_tag_original_dir = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_ram_clean_original")
 path_testo_dir        = Path("/data/caproni/maddalena_waldner/workspace/outputs/Album Trento JPG_split")
 path_maschere_dir     = Path("/data/caproni/maddalena_waldner/workspace/data/Album Trento JPG_split")
 path_maschere_singole = Path("/data/caproni/maddalena_waldner/workspace/outputs/outputs_sam3_tutti/predizioni_unite")

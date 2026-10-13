@@ -12,7 +12,7 @@ IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 DEFAULT_MODEL = "Qwen/Qwen3-VL-8B-Instruct"
 
 # Resolve repo root from this file (…/caproni/scripts/ → …/caproni/) so Docker (/work) and host paths both work.
-_REPO_ROOT = Path("/home/mwaldner/workspace/")
+_REPO_ROOT = Path("/data/caproni/maddalena_waldner/workspace/") 
 DEFAULT_INPUT_DIR = _REPO_ROOT / "data" / "Album Trento JPG_split"
 DEFAULT_OUTPUT_DIR = _REPO_ROOT / "outputs" / "Album Trento JPG_split"
 
